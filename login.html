@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Connexion</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connexion</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 </head>
 <body>
-  <header>
+<header>
     <div class="header-content">
-      <h1>Connexion</h1>
+        <img src="assets/logo_paroisse.jpg.png" alt="Logo Paroisse" class="logo">
+        <h1>Connexion</h1>
     </div>
-  </header>
+</header>
 
-  <nav>
-    <a href="index.html">Accueil</a>
-    <a href="inscription.html">Inscription</a>
-    <a href="connexion.html">Connexion</a>
-  </nav>
-
-  <main class="container">
-    <form id="loginForm" onsubmit="handleLogin(event)">
-      <input type="email" placeholder="Email" required>
-      <input type="password" placeholder="Mot de passe" required>
-      <button type="submit">Se connecter</button>
+<div class="landing-container container">
+    <form id="loginForm">
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Mot de passe" required>
+        <button type="submit">Se connecter</button>
     </form>
-  </main>
+    <p>Pas encore inscrit ? <a href="index.html">Inscrivez-vous ici</a></p>
+</div>
+
+<footer>
+&copy; 2025 Paroisse Notre Dame l'Assomption – Tous droits réservés.
+</footer>
 </body>
 </html>

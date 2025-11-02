@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profil</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profil</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 </head>
-<body onload="checkAuth()">
-  <header>
-    <h1>Profil de l'utilisateur</h1>
-    <p>Bienvenue, <span id="userName">Nom d'utilisateur</span> !</p>
-  </header>
+<body onload="protectPage()">
+<header>
+    <div class="header-content">
+        <img src="assets/logo_paroisse.jpg.png" alt="Logo Paroisse" class="logo">
+        <h1>Profil de <span id="userName"></span></h1>
+    </div>
+</header>
 
-  <main class="container">
+<div class="container">
     <form id="profileForm">
-      <input type="file" accept="image/*" placeholder="Ajouter une photo de profil">
-      <button type="submit">Mettre à jour</button>
+        <input type="file" accept="image/*">
+        <button type="submit">Mettre à jour</button>
     </form>
-  </main>
+</div>
+
+<footer>
+&copy; 2025 Paroisse Notre Dame l'Assomption – Tous droits réservés.
+</footer>
 </body>
 </html>

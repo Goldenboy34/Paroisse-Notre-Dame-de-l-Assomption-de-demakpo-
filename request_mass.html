@@ -1,24 +1,37 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Demande de messe</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demande de messe</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 </head>
-<body onload="checkAuth()">
-  <header>
-    <h1>Demande de messe</h1>
-  </header>
+<body onload="protectPage()">
+<header>
+    <div class="header-content">
+        <img src="assets/logo_paroisse.jpg.png" alt="Logo Paroisse" class="logo">
+        <h1>Demande de Messe</h1>
+    </div>
+</header>
 
-  <main class="container">
-    <form id="massRequestForm" onsubmit="sendMassRequest(event)">
-      <input type="text" name="userName" placeholder="Nom" required>
-      <input type="text" name="userContact" placeholder="Contact" required>
-      <textarea name="message" placeholder="Votre demande" required></textarea>
-      <button type="submit">Soumettre la demande</button>
+<div class="container">
+    <form id="massRequestForm" action="https://formspree.io/f/xdkpbavz" method="POST">
+        <input type="text" name="userName" placeholder="Nom" required>
+        <input type="text" name="userEmail" placeholder="Contact" required>
+        <textarea name="message" placeholder="Votre demande" required></textarea>
+        <button type="submit">Soumettre la demande</button>
     </form>
-  </main>
+
+    <div id="paymentQuestion" style="display:none;">
+        <p>Avez-vous payé ?</p>
+        <button id="paidYes">Oui, j'ai payé</button>
+        <button id="paidNo">Non, je n'ai pas encore payé</button>
+    </div>
+</div>
+
+<footer>
+&copy; 2025 Paroisse Notre Dame l'Assomption – Tous droits réservés.
+</footer>
 </body>
 </html>

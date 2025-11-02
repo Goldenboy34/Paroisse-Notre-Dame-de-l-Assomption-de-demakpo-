@@ -1,32 +1,46 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tableau de Bord</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tableau de Bord</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 </head>
-<body>
-  <header>
+<body onload="protectPage()">
+<header>
     <div class="header-content">
-      <h1>Tableau de Bord</h1>
-      <p>Bienvenue, <span id="userName">Invité</span> !</p>
+        <img src="assets/logo_paroisse.jpg.png" alt="Logo Paroisse" class="logo">
+        <h1>Tableau de Bord<br><span id="userName"></span></h1>
     </div>
-  </header>
+</header>
 
-  <nav>
-    <a href="request_mass.html">Demande de messe</a>
-    <a href="profile.html">Mon profil</a>
-    <a href="index.html" onclick="logout()">Se déconnecter</a>
-  </nav>
+<div class="container">
+    <section id="readings-section"></section>
 
-  <main class="container">
+    <h2>Fonctionnalités</h2>
     <ul>
-      <li><a href="request_mass.html">Faire une demande de messe</a></li>
-      <li><a href="profile.html">Mon profil</a></li>
-      <li><a href="index.html" onclick="logout()">Se déconnecter</a></li>
+        <li><a href="massRequest.html">Faire une demande de messe</a></li>
+        <li><a href="profile.html">Mon profil</a></li>
+        <li><a href="#" id="logoutBtn">Se déconnecter</a></li>
     </ul>
-  </main>
+
+    <section id="infos-paroisse">
+        <h2>Informations de l'Église</h2>
+        <p>Curé : Père Jean Baptiste</p>
+        <p>Vicaire : Père Paul</p>
+        <p>Vice-Président : M. Marc</p>
+        <p>Associations :</p>
+        <ul>
+            <li>Catéchisme : Mme Claire - 12345678</li>
+            <li>Chorale : M. Pierre - 87654321</li>
+            <li>Jeunesse : Mme Anne - 11223344</li>
+        </ul>
+    </section>
+</div>
+
+<footer>
+&copy; 2025 Paroisse Notre Dame l'Assomption – Tous droits réservés.
+</footer>
 </body>
 </html>
