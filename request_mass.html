@@ -5,15 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demande de messe</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
 <body>
     <h1>Demande de messe</h1>
-    <form id="massRequestForm" onsubmit="sendMassRequest(event)">
-        <input type="text" placeholder="Nom" required>
-        <input type="email" placeholder="Email" required>
-        <textarea placeholder="Votre demande" required></textarea>
+    <form id="massRequestForm" action="https://formspree.io/f/xdkpbavz" method="POST">
+        <input type="text" name="userName" placeholder="Nom" required>
+        <input type="email" name="userEmail" placeholder="Email" required>
+        <textarea name="message" placeholder="Votre demande" required></textarea>
         <button type="submit">Envoyer la demande</button>
     </form>
+
+    <script>
+        document.getElementById('massRequestForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Empêche le rechargement de la page
+
+            fetch(this.action, {
+                method: this.method,
+                body: new FormData(this),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    alert("Demande de messe envoyée !");
+                    this.reset(); // Réinitialiser le formulaire
+                } else {
+                    alert("Échec de l'envoi de la demande.");
+                }
+            }).catch(error => {
+                alert("Erreur: " + error);
+            });
+        });
+    </script>
 </body>
 </html>
