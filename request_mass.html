@@ -20,19 +20,20 @@
             event.preventDefault(); // Empêche le rechargement de la page
 
             // Demande si l'utilisateur a payé
-            const hasPaid = confirm("Avez-vous payé ? (OK pour Oui, Annuler pour Non)");
+            const paymentConfirmation = prompt("Avez-vous payé ? (Tapez 'Oui, j\'ai payé' ou 'Non, je n\'ai pas encore payé')");
 
-            if (hasPaid) {
-                // Si l'utilisateur a payé
-                const paymentConfirmation = prompt("Veuillez entrer le numéro de transaction ou une capture de la transaction :");
-                if (paymentConfirmation) {
-                    // Soumettre le formulaire avec les informations de paiement
-                    submitFormWithPaymentInfo(this, paymentConfirmation);
+            if (paymentConfirmation === "Oui, j'ai payé") {
+                // Soumettre le formulaire avec les informations de paiement
+                const transactionNumber = prompt("Veuillez entrer le numéro de transaction ou une capture de la transaction :");
+                if (transactionNumber) {
+                    submitFormWithPaymentInfo(this, transactionNumber);
                 } else {
                     alert("Aucune information de paiement fournie.");
                 }
+            } else if (paymentConfirmation === "Non, je n'ai pas encore payé") {
+                alert("Veuillez payer via TMoney ou Flooz au numéro suivant : +123456789");
             } else {
-                alert("Veuillez vérifier votre paiement avant de soumettre la demande.");
+                alert("Réponse non reconnue. Veuillez répondre par 'Oui, j\'ai payé' ou 'Non, je n\'ai pas encore payé'.");
             }
         });
 
