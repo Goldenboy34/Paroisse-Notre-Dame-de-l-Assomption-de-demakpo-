@@ -19,23 +19,46 @@
         document.getElementById('massRequestForm').addEventListener('submit', function(event) {
             event.preventDefault(); // Empêche le rechargement de la page
 
-            fetch(this.action, {
-                method: this.method,
-                body: new FormData(this),
+            // Demande si l'utilisateur a payé
+            const hasPaid = confirm("Avez-vous payé ? (OK pour Oui, Annuler pour Non)");
+            
+            if (hasPaid) {
+                // Si l'utilisateur a payé
+                const paymentConfirmation = prompt("Veuillez entrer le numéro de transaction ou une capture de la transaction :");
+                if (paymentConfirmation) {
+                    // Soumettre le formulaire avec les informations de paiement
+                    submitFormWithPaymentInfo(this, paymentConfirmation);
+                } else {
+                    alert("Aucune information de paiement fournie.");
+                }
+            } else {
+                // Si l'utilisateur n'a pas payé
+                alert("Veuillez payer via TMoney ou Flooz au numéro suivant : +123456789");
+            }
+        });
+
+        function submitFormWithPaymentInfo(form, paymentConfirmation) {
+            // Ajoute le numéro de transaction ou la capture à l'objet FormData
+            const formData = new FormData(form);
+            formData.append("paymentConfirmation", paymentConfirmation);
+
+            fetch(form.action, {
+                method: form.method,
+                body: formData,
                 headers: {
                     'Accept': 'application/json'
                 }
             }).then(response => {
                 if (response.ok) {
                     alert("Demande de messe envoyée !");
-                    this.reset(); // Réinitialiser le formulaire
+                    form.reset(); // Réinitialiser le formulaire
                 } else {
                     alert("Échec de l'envoi de la demande.");
                 }
             }).catch(error => {
                 alert("Erreur: " + error);
             });
-        });
+        }
     </script>
 </body>
 </html>
