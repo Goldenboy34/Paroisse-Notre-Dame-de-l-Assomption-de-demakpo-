@@ -8,39 +8,51 @@
 <script src="script.js" defer></script>
 </head>
 <body onload="protectPage()">
+
+<!-- HEADER -->
 <header>
     <div class="header-content">
-        <img src="assets/logo_paroisse.jpg.png" alt="Logo Paroisse" class="logo">
-        <h1>Tableau de Bord<br><span id="userName"></span></h1>
+        <img src="logo_paroisse.jpg.png" alt="Logo Paroisse" class="logo">
+        <h1>Tableau de Bord<br><span id="userName">Invité</span></h1>
     </div>
 </header>
 
+<!-- CONTENU PRINCIPAL -->
 <div class="container">
+
+    <!-- Lectures Journalières -->
     <section id="readings-section"></section>
 
-    <h2>Fonctionnalités</h2>
-    <ul>
-        <li><a href="massRequest.html">Faire une demande de messe</a></li>
-        <li><a href="profile.html">Mon profil</a></li>
-        <li><a href="#" id="logoutBtn">Se déconnecter</a></li>
-    </ul>
-
-    <section id="infos-paroisse">
-        <h2>Informations de l'Église</h2>
-        <p>Curé : Père Jean Baptiste</p>
-        <p>Vicaire : Père Paul</p>
-        <p>Vice-Président : M. Marc</p>
-        <p>Associations :</p>
+    <!-- Fonctionnalités -->
+    <section>
+        <h2>Fonctionnalités</h2>
         <ul>
-            <li>Catéchisme : Mme Claire - 12345678</li>
-            <li>Chorale : M. Pierre - 87654321</li>
-            <li>Jeunesse : Mme Anne - 11223344</li>
+            <li><a href="request_mass.html">Faire une demande de messe</a></li>
+            <li><a href="profile.html">Mon profil</a></li>
+            <li><a href="#" id="logoutBtn">Se déconnecter</a></li>
         </ul>
     </section>
+
+    <!-- Informations de l'Église -->
+    <section id="infos-paroisse">
+        <h2>Informations de l'Église</h2>
+        <p><strong>Curé :</strong> Père Emmanuel MAWUSSI</p>
+        <p><strong>Vicaire :</strong> Fabrice ATTISSO</p>
+        <p><strong>Vice-Président :</strong> M. Marc</p>
+        <p><strong>Associations :</strong></p>
+        <ul>
+            <li><strong>Catéchisme :</strong> Mme Claire - 12345678</li>
+            <li><strong>Chorale :</strong> M. Pierre - 87654321</li>
+            <li><strong>Jeunesse :</strong> Mme Anne - 11223344</li>
+        </ul>
+    </section>
+
 </div>
 
+<!-- FOOTER -->
 <footer>
 &copy; 2025 Paroisse Notre Dame l'Assomption – Tous droits réservés.
 </footer>
+
 </body>
 </html>

@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Demande de messe</title>
-<link rel="stylesheet" href="style.css">
-<script src="script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demande de Messe</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body onload="protectPage()">
-<header>
-    <div class="header-content">
-        <img src="assets/logo_paroisse.jpg.png" alt="Logo Paroisse" class="logo">
-        <h1>Demande de Messe</h1>
+    <header>
+        <div class="header-content">
+            <img src="logo_paroisse.jpg.png" alt="Logo Paroisse" class="logo">
+            <h1>Demande de Messe<br><span id="userName"></span></h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <section>
+            <p>Remplissez le formulaire ci-dessous pour soumettre votre demande de messe.</p>
+
+            <form id="massRequestForm" action="https://formspree.io/f/xdkpbavz" method="POST">
+                <input type="text" name="userName" placeholder="Nom complet" required>
+                <input type="text" name="userEmail" placeholder="Contact (Email ou Téléphone)" required>
+                <textarea name="message" placeholder="Votre demande / intention de messe" required></textarea>
+                <button type="submit">Soumettre la demande</button>
+            </form>
+
+            <!-- Question paiement -->
+            <div id="paymentQuestion" style="display:none; margin-top:20px;">
+                <p>Avez-vous déjà payé ?</p>
+                <button id="paidYes">Oui, j'ai payé</button>
+                <button id="paidNo">Non, je n'ai pas encore payé</button>
+            </div>
+        </section>
     </div>
-</header>
 
-<div class="container">
-    <form id="massRequestForm" action="https://formspree.io/f/xdkpbavz" method="POST">
-        <input type="text" name="userName" placeholder="Nom" required>
-        <input type="text" name="userEmail" placeholder="Contact" required>
-        <textarea name="message" placeholder="Votre demande" required></textarea>
-        <button type="submit">Soumettre la demande</button>
-    </form>
-
-    <div id="paymentQuestion" style="display:none;">
-        <p>Avez-vous payé ?</p>
-        <button id="paidYes">Oui, j'ai payé</button>
-        <button id="paidNo">Non, je n'ai pas encore payé</button>
-    </div>
-</div>
-
-<footer>
-&copy; 2025 Paroisse Notre Dame l'Assomption – Tous droits réservés.
-</footer>
+    <footer>
+        &copy; 2025 Paroisse Notre Dame l'Assomption – Tous droits réservés.
+    </footer>
 </body>
 </html>
