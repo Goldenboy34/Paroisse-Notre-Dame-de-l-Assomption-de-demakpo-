@@ -16,7 +16,7 @@
         <li><a href="logout.html">Se déconnecter</a></li>
     </ul>
     <script>
-        document.getElementById('userName').innerText = localStorage.getItem('userName');
+        document.getElementById('userName').innerText = localStorage.getItem('userName') || 'Invité';
     </script>
 </body>
 </html>
