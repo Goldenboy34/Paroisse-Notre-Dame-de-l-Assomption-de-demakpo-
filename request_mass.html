@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion</title>
+    <title>Demande de messe</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Connexion</h1>
-    <form id="loginForm">
+    <h1>Demande de messe</h1>
+    <form id="massRequestForm">
+        <input type="text" placeholder="Nom" required>
         <input type="email" placeholder="Email" required>
-        <input type="password" placeholder="Mot de passe" required>
-        <button type="submit">Se connecter</button>
+        <textarea placeholder="Votre demande" required></textarea>
+        <button type="submit">Envoyer la demande</button>
     </form>
 </body>
 </html>
