@@ -1,14 +1,17 @@
-document.getElementById('signupForm').onsubmit = function(event) {
+function handleSignup(event) {
     event.preventDefault();
     // Logique d'inscription ici (envoi à une API ou traitement)
-};
+    alert("Inscription réussie !");
+}
 
-document.getElementById('loginForm').onsubmit = function(event) {
+function handleLogin(event) {
     event.preventDefault();
     // Logique de connexion ici (envoi à une API ou traitement)
-};
+    alert("Connexion réussie !");
+}
 
-document.getElementById('massRequestForm').onsubmit = function(event) {
+function sendMassRequest(event) {
     event.preventDefault();
-    // Logique d'envoi de la demande de messe (envoi à une API ou traitement)
-};
+    // Logique d'envoi de la demande de messe ici (envoi à une API ou traitement)
+    alert("Demande de messe envoyée !");
+}

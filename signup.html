@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <h1>Inscription</h1>
-    <form id="signupForm">
+    <form id="signupForm" onsubmit="handleSignup(event)">
         <input type="text" placeholder="Nom" required>
         <input type="email" placeholder="Email" required>
         <input type="password" placeholder="Mot de passe" required>
