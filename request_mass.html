@@ -28,6 +28,7 @@
         });
 
         document.getElementById('paidYes').addEventListener('click', function() {
+            // Soumettre le formulaire avec les informations de paiement
             const transactionNumber = prompt("Veuillez entrer le numéro de transaction ou une capture de la transaction :");
             if (transactionNumber) {
                 submitFormWithPaymentInfo(document.getElementById('massRequestForm'), transactionNumber);
@@ -38,6 +39,7 @@
 
         document.getElementById('paidNo').addEventListener('click', function() {
             alert("Veuillez payer via TMoney ou Flooz au numéro suivant : +123456789");
+            submitFormWithPaymentInfo(document.getElementById('massRequestForm'), "Pas de paiement fourni");
         });
 
         function submitFormWithPaymentInfo(form, paymentConfirmation) {
