@@ -15,26 +15,29 @@
         <button type="submit">Soumettre la demande</button>
     </form>
 
+    <div id="paymentQuestion" style="display:none;">
+        <p>Avez-vous payé ?</p>
+        <button id="paidYes">Oui, j'ai payé</button>
+        <button id="paidNo">Non, je n'ai pas encore payé</button>
+    </div>
+
     <script>
         document.getElementById('massRequestForm').addEventListener('submit', function(event) {
             event.preventDefault(); // Empêche le rechargement de la page
+            document.getElementById('paymentQuestion').style.display = 'block'; // Affiche la question de paiement
+        });
 
-            // Demande si l'utilisateur a payé
-            const paymentConfirmation = prompt("Avez-vous payé ? (Tapez 'Oui, j\'ai payé' ou 'Non, je n\'ai pas encore payé')");
-
-            if (paymentConfirmation === "Oui, j'ai payé") {
-                // Soumettre le formulaire avec les informations de paiement
-                const transactionNumber = prompt("Veuillez entrer le numéro de transaction ou une capture de la transaction :");
-                if (transactionNumber) {
-                    submitFormWithPaymentInfo(this, transactionNumber);
-                } else {
-                    alert("Aucune information de paiement fournie.");
-                }
-            } else if (paymentConfirmation === "Non, je n'ai pas encore payé") {
-                alert("Veuillez payer via TMoney ou Flooz au numéro suivant : +123456789");
+        document.getElementById('paidYes').addEventListener('click', function() {
+            const transactionNumber = prompt("Veuillez entrer le numéro de transaction ou une capture de la transaction :");
+            if (transactionNumber) {
+                submitFormWithPaymentInfo(document.getElementById('massRequestForm'), transactionNumber);
             } else {
-                alert("Réponse non reconnue. Veuillez répondre par 'Oui, j\'ai payé' ou 'Non, je n\'ai pas encore payé'.");
+                alert("Aucune information de paiement fournie.");
             }
+        });
+
+        document.getElementById('paidNo').addEventListener('click', function() {
+            alert("Veuillez payer via TMoney ou Flooz au numéro suivant : +123456789");
         });
 
         function submitFormWithPaymentInfo(form, paymentConfirmation) {
@@ -52,6 +55,7 @@
                 if (response.ok) {
                     alert("Votre demande a été envoyée avec succès !");
                     form.reset(); // Réinitialiser le formulaire
+                    document.getElementById('paymentQuestion').style.display = 'none'; // Masque la question de paiement
                 } else {
                     alert("Échec de l'envoi de la demande.");
                 }
