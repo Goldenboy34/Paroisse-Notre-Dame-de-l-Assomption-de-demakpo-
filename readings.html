@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lectures du jour</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body onload="checkAuth(); loadReadings()">
+  <header>
+    <h1>Lectures Journalières</h1>
+  </header>
+
+  <main class="container">
+    <section id="readings-section">
+      <h2>Évangile du jour</h2>
+      <p id="gospel"></p>
+
+      <h2>Thèses / méditations</h2>
+      <p id="theses"></p>
+
+      <h2>Prière du jour</h2>
+      <p id="prayer"></p>
+    </section>
+  </main>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Connexion</title>
+  <title>Paroisse Notre Dame l'Assomption</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
@@ -11,16 +11,18 @@
   <main class="landing-container">
     <header class="landing-header">
       <img src="logo_paroisse.jpg.png" alt="Logo Paroisse" class="logo">
-      <h1>Connexion</h1>
+      <h1>Paroisse Notre Dame l'Assomption</h1>
     </header>
 
     <section class="signup-section">
-      <form id="loginForm" onsubmit="handleLogin(event)">
+      <h2>Inscrivez-vous pour accéder aux services</h2>
+      <form id="signupForm" onsubmit="handleSignup(event)">
+        <input type="text" placeholder="Nom" required>
         <input type="email" placeholder="Email" required>
         <input type="password" placeholder="Mot de passe" required>
-        <button type="submit">Se connecter</button>
+        <button type="submit">S'inscrire</button>
       </form>
-      <p>Pas encore inscrit ? <a href="landing.html">Inscrivez-vous ici</a></p>
+      <p>Déjà inscrit ? <a href="connexion.html">Connectez-vous ici</a></p>
     </section>
   </main>
 </body>

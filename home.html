@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accueil - Paroisse Notre Dame</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body onload="checkAuth()">
+  <header>
+    <div class="header-content">
+      <img src="logo_paroisse.jpg.png" alt="Logo Paroisse" class="logo">
+      <h1>Paroisse Notre Dame l'Assomption</h1>
+      <p>Bienvenue, <span id="userName">Utilisateur</span> !</p>
+    </div>
+    <nav>
+      <a href="home.html">Accueil</a>
+      <a href="request_mass.html">Demande de messe</a>
+      <a href="profile.html">Profil</a>
+      <a href="readings.html">Lectures du jour</a>
+      <a href="parish_info.html">Informations</a>
+      <a href="contact.html">Contact</a>
+      <a href="#" onclick="logout()">Déconnexion</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="services">
+      <h2>Nos Services</h2>
+      <ul>
+        <li><a href="request_mass.html">Faire une demande de messe</a></li>
+        <li><a href="profile.html">Gérer mon profil</a></li>
+        <li><a href="readings.html">Lectures journalières</a></li>
+        <li><a href="parish_info.html">Informations sur la paroisse</a></li>
+      </ul>
+    </section>
+
+    <section class="about">
+      <h2>À propos de nous</h2>
+      <p>Nous sommes une communauté chrétienne unie par la foi et le partage. 
+      Notre objectif est de servir, d’écouter et d’accompagner tous ceux qui en ont besoin.</p>
+    </section>
+  </main>
+</body>
+</html>

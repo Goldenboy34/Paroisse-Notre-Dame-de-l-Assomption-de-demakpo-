@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Paroisse Notre Dame l'Assomption</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
@@ -16,16 +17,18 @@
 
   <nav>
     <a href="index.html">Accueil</a>
-    <a href="inscription.html">Inscription</a>
-    <a href="connexion.html">Connexion</a>
+    <span id="nav-links">
+      <a href="inscription.html" class="nav-guest">Inscription</a>
+      <a href="connexion.html" class="nav-guest">Connexion</a>
+      <a href="dashboard.html" class="nav-user private">Tableau de bord</a>
+      <a href="request_mass.html" class="nav-user private">Demande de messe</a>
+      <a href="profile.html" class="nav-user private">Profil</a>
+      <a href="#" class="nav-user private" onclick="logout()">Déconnexion</a>
+    </span>
   </nav>
 
   <main class="container">
-    <section class="intro">
-      <p>Nous sommes heureux de vous accueillir dans notre communauté paroissiale. 
-      Notre mission est de vous offrir des informations et des services au service de la foi et de la solidarité.</p>
-    </section>
-
+    <!-- Section CTA visible uniquement si non connecté -->
     <section class="cta">
       <h2>Rejoignez notre communauté</h2>
       <p>Pour accéder aux services en ligne, veuillez vous inscrire ou vous connecter :</p>
@@ -35,7 +38,12 @@
       </div>
     </section>
 
-    <section class="services">
+    <section class="intro">
+      <p>Nous sommes heureux de vous accueillir dans notre communauté paroissiale. 
+      Notre mission est de vous offrir des informations et des services au service de la foi et de la solidarité.</p>
+    </section>
+
+    <section class="services private">
       <h2>Nos Services</h2>
       <ul>
         <li>Demande de messe</li>
@@ -43,11 +51,6 @@
         <li>Visites pastorales</li>
         <li>Informations sur la communauté</li>
       </ul>
-    </section>
-
-    <section class="contact">
-      <h2>Contactez-nous</h2>
-      <p>Pour toute question ou demande, <a href="contact.html">contactez-nous</a>.</p>
     </section>
 
     <section class="about">

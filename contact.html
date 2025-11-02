@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body onload="checkAuth()">
+  <header>
+    <h1>Contact et Localisation</h1>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>Contactez-nous</h2>
+      <form id="contactForm">
+        <input type="text" placeholder="Nom" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Message" required></textarea>
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Adresse</h2>
+      <p>Paroisse Notre Dame l'Assomption, Démakpoè Apegnigbi</p>
+      <iframe src="https://maps.google.com/maps?q=Démakpoè%20Apegnigbi&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="300" style="border:0;"></iframe>
+    </section>
+  </main>
+</body>
+</html>
