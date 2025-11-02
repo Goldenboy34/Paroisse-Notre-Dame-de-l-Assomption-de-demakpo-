@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Tableau de Bord</h1>
+    <p>Bienvenue, <span id="userName">Nom de l'utilisateur</span> !</p>
+    <ul>
+        <li><a href="request_mass.html">Faire une demande de messe</a></li>
+        <li><a href="payment.html">Effectuer un paiement</a></li>
+        <li><a href="profile.html">Mon profil</a></li>
+        <li><a href="logout.html">Se déconnecter</a></li>
+    </ul>
+    <script>
+        document.getElementById('userName').innerText = localStorage.getItem('userName');
+    </script>
+</body>
+</html>
