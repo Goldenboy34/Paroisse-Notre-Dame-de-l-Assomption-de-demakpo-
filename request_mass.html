@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Demande de messe</h1>
-    <form id="massRequestForm" action="https://formspree.io/f/xdkpbavaz" method="POST">
+    <form id="massRequestForm" action="https://formspree.io/f/xdkpbavz" method="POST">
         <input type="text" name="userName" placeholder="Nom" required>
         <input type="email" name="userEmail" placeholder="Email" required>
         <textarea name="message" placeholder="Votre demande" required></textarea>
@@ -32,10 +32,7 @@
                     alert("Aucune information de paiement fournie.");
                 }
             } else {
-                // Si l'utilisateur n'a pas payé
-                alert("Veuillez payer via TMoney ou Flooz au numéro suivant : +123456789");
-                // Soumettre le formulaire sans informations de paiement
-                submitFormWithPaymentInfo(this, "Pas de paiement fourni");
+                alert("Veuillez vérifier votre paiement avant de soumettre la demande.");
             }
         });
 
@@ -52,7 +49,7 @@
                 }
             }).then(response => {
                 if (response.ok) {
-                    alert("Demande de messe envoyée !");
+                    alert("Votre demande a été envoyée avec succès !");
                     form.reset(); // Réinitialiser le formulaire
                 } else {
                     alert("Échec de l'envoi de la demande.");
