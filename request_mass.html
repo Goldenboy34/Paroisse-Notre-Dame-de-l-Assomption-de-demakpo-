@@ -8,11 +8,11 @@
 </head>
 <body>
     <h1>Demande de messe</h1>
-    <form id="massRequestForm" action="https://formspree.io/f/xdkpbavz" method="POST">
+    <form id="massRequestForm" action="https://formspree.io/f/xdkpbavaz" method="POST">
         <input type="text" name="userName" placeholder="Nom" required>
         <input type="email" name="userEmail" placeholder="Email" required>
         <textarea name="message" placeholder="Votre demande" required></textarea>
-        <button type="submit">Envoyer la demande</button>
+        <button type="submit">Soumettre la demande</button>
     </form>
 
     <script>
@@ -21,7 +21,7 @@
 
             // Demande si l'utilisateur a payé
             const hasPaid = confirm("Avez-vous payé ? (OK pour Oui, Annuler pour Non)");
-            
+
             if (hasPaid) {
                 // Si l'utilisateur a payé
                 const paymentConfirmation = prompt("Veuillez entrer le numéro de transaction ou une capture de la transaction :");
@@ -34,6 +34,8 @@
             } else {
                 // Si l'utilisateur n'a pas payé
                 alert("Veuillez payer via TMoney ou Flooz au numéro suivant : +123456789");
+                // Soumettre le formulaire sans informations de paiement
+                submitFormWithPaymentInfo(this, "Pas de paiement fourni");
             }
         });
 
