@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="container">
-    <h1>Connexion</h1>
-    <form id="loginForm" onsubmit="handleLogin(event)">
-        <input type="email" placeholder="Email" required>
-        <input type="password" placeholder="Mot de passe" required>
-        <button type="submit">Se connecter</button>
-    </form>
+  <header>
+    <div class="header-content">
+      <h1>Connexion</h1>
     </div>
+  </header>
+
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="inscription.html">Inscription</a>
+    <a href="connexion.html">Connexion</a>
+  </nav>
+
+  <main class="container">
+    <form id="loginForm" onsubmit="handleLogin(event)">
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Mot de passe" required>
+      <button type="submit">Se connecter</button>
+    </form>
+  </main>
 </body>
 </html>

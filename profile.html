@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="container">
-    <h1>Profil de l'utilisateur</h1>
-    <p>Bienvenue, <span id="userName">Nom d'utilisateur</span> !</p>
-    <form id="profileForm">
-        <input type="file" accept="image/*" placeholder="Ajouter une photo de profil">
-        <button type="submit">Mettre à jour</button>
-    </form>
+  <header>
+    <div class="header-content">
+      <h1>Profil de l'utilisateur</h1>
+      <p>Bienvenue, <span id="userName">Nom d'utilisateur</span> !</p>
     </div>
+  </header>
+
+  <nav>
+    <a href="dashboard.html">Tableau de bord</a>
+    <a href="request_mass.html">Demande de messe</a>
+    <a href="index.html" onclick="logout()">Se déconnecter</a>
+  </nav>
+
+  <main class="container">
+    <form id="profileForm">
+      <input type="file" accept="image/*" placeholder="Ajouter une photo de profil">
+      <button type="submit">Mettre à jour</button>
+    </form>
+  </main>
 </body>
 </html>

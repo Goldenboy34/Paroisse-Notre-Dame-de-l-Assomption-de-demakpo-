@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tableau de Bord</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tableau de Bord</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="container">
-    <h1>Tableau de Bord</h1>
-    <p>Bienvenue, <span id="userName">Nom de l'utilisateur</span> !</p>
-    <ul>
-        <li><a href="request_mass.html">Faire une demande de messe</a></li>
-        
-        <li><a href="profile.html">Mon profil</a></li>
-        <li><a href="logout.html">Se déconnecter</a></li>
-    </ul>
-    <script>
-        document.getElementById('userName').innerText = localStorage.getItem('userName') || 'Invité';
-    </script>
+  <header>
+    <div class="header-content">
+      <h1>Tableau de Bord</h1>
+      <p>Bienvenue, <span id="userName">Invité</span> !</p>
     </div>
+  </header>
+
+  <nav>
+    <a href="request_mass.html">Demande de messe</a>
+    <a href="profile.html">Mon profil</a>
+    <a href="index.html" onclick="logout()">Se déconnecter</a>
+  </nav>
+
+  <main class="container">
+    <ul>
+      <li><a href="request_mass.html">Faire une demande de messe</a></li>
+      <li><a href="profile.html">Mon profil</a></li>
+      <li><a href="index.html" onclick="logout()">Se déconnecter</a></li>
+    </ul>
+  </main>
 </body>
 </html>

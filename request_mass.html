@@ -1,71 +1,32 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demande de messe</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demande de messe</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="container">
-    <h1>Demande de messe</h1>
-    <form id="massRequestForm" action="https://formspree.io/f/xdkpbavz" method="POST">
-        <input type="text" name="userName" placeholder="Nom" required>
-        <input type="Contact" name="userEmail" placeholder="Contact" required>
-        <textarea name="message" placeholder="Votre demande" required></textarea>
-        <button type="submit">Soumettre la demande</button>
-    </form>
-
-    <div id="paymentQuestion" style="display:none;">
-        <p>Avez-vous payé ?</p>
-        <button id="paidYes">Oui, j'ai payé</button>
-        <button id="paidNo">Non, je n'ai pas encore payé</button>
+  <header>
+    <div class="header-content">
+      <h1>Demande de messe</h1>
     </div>
+  </header>
 
-    <script>
-        document.getElementById('massRequestForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Empêche le rechargement de la page
-            document.getElementById('paymentQuestion').style.display = 'block'; // Affiche la question de paiement
-        });
+  <nav>
+    <a href="dashboard.html">Tableau de bord</a>
+    <a href="profile.html">Profil</a>
+    <a href="index.html" onclick="logout()">Se déconnecter</a>
+  </nav>
 
-        document.getElementById('paidYes').addEventListener('click', function() {
-            // Soumettre le formulaire avec les informations de paiement
-            const transactionNumber = prompt("Veuillez entrer le numéro de transaction ou une capture de la transaction :");
-            if (transactionNumber) {
-                submitFormWithPaymentInfo(document.getElementById('massRequestForm'), transactionNumber);
-            } else {
-                alert("Aucune information de paiement fournie.");
-            }
-        });
-
-        document.getElementById('paidNo').addEventListener('click', function() {
-            alert("Veuillez payer via TMoney ou Flooz au numéro suivant : +123456789");
-            submitFormWithPaymentInfo(document.getElementById('massRequestForm'), "Pas de paiement fourni");
-        });
-
-        function submitFormWithPaymentInfo(form, paymentConfirmation) {
-            // Ajoute le numéro de transaction ou la capture à l'objet FormData
-            const formData = new FormData(form);
-            formData.append("paymentConfirmation", paymentConfirmation);
-
-            fetch(form.action, {
-                method: form.method,
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(response => {
-                if (response.ok) {
-                    alert("Votre demande a été envoyée avec succès !");
-                    form.reset(); // Réinitialiser le formulaire
-                    document.getElementById('paymentQuestion').style.display = 'none'; // Masque la question de paiement
-                } else {
-                    alert("Échec de l'envoi de la demande.");
-                }
-            }).catch(error => {
-                alert("Erreur: " + error);
-            });
-        }
-    </script>
+  <main class="container">
+    <form id="massRequestForm" onsubmit="sendMassRequest(event)">
+      <input type="text" name="userName" placeholder="Nom" required>
+      <input type="text" name="userContact" placeholder="Contact" required>
+      <textarea name="message" placeholder="Votre demande" required></textarea>
+      <button type="submit">Soumettre la demande</button>
+    </form>
+  </main>
 </body>
 </html>
