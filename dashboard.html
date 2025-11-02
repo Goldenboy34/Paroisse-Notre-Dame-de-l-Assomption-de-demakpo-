@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
     <h1>Tableau de Bord</h1>
     <p>Bienvenue, <span id="userName">Nom de l'utilisateur</span> !</p>
     <ul>
@@ -18,5 +19,6 @@
     <script>
         document.getElementById('userName').innerText = localStorage.getItem('userName') || 'Invité';
     </script>
+    </div>
 </body>
 </html>
